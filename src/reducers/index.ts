@@ -1,20 +1,5 @@
 import { combineReducers } from 'redux';
-
-const defaultState = {
-	todos: ['lmao'],
-};
-
-const todoReducer = (state = defaultState, action) => {
-	switch (action.type) {
-		case 'ADD_ITEM':
-			return {
-				...state,
-				todos: state.todos.concat(action.payload),
-			};
-		default:
-			return state;
-	}
-};
+import todoReducer from '../slices/todoSlice';
 
 const rootReducer = combineReducers({
 	todos: todoReducer,
