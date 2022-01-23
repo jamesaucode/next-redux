@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { addTodo } from '../slices/todoSlice';
 import { RootState } from '../reducers';
 
 const TodoList: React.FunctionComponent = props => {
@@ -13,7 +14,7 @@ const TodoList: React.FunctionComponent = props => {
 
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 		event.preventDefault();
-		dispatch({ type: 'ADD_ITEM', payload: task });
+		dispatch(addTodo(task));
 		setTask('');
 	};
 
